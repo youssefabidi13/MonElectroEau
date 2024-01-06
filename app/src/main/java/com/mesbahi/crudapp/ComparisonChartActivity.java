@@ -18,6 +18,7 @@ import java.util.Calendar;
 import java.util.List;
 
 public class ComparisonChartActivity extends AppCompatActivity {
+    User loggedInUser = SessionManager.getInstance().getCurrentUser();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +71,7 @@ public class ComparisonChartActivity extends AppCompatActivity {
         List<Float> consumptionValues = new ArrayList<>();
 
         // Replace 1 with the actual user ID
-        int userId = 1;
+        long userId = loggedInUser.getId();
 
         // Get the current month and year
         int currentMonth = Calendar.getInstance().get(Calendar.MONTH) + 1; // Months are 0-indexed
@@ -110,7 +111,7 @@ public class ComparisonChartActivity extends AppCompatActivity {
         return result;
     }
 
-    private float getConsumptionForMonth(int userId, int month, int year) {
+    private float getConsumptionForMonth(long userId, int month, int year) {
         // Replace with your actual method to fetch consumption data from the database
         float consumptionValue = 0.0f;
 

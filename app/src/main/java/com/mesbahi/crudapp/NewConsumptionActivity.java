@@ -2,6 +2,7 @@ package com.mesbahi.crudapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -72,8 +73,10 @@ public class NewConsumptionActivity extends AppCompatActivity {
                     if (id != -1) {
                         // Successful insertion
                         Toast.makeText(NewConsumptionActivity.this, "Electricity consumption added successfully", Toast.LENGTH_SHORT).show();
-                        loadConsumptionsForUser(1,0);
-                        finish(); // Close the activity after adding consumption
+                        //loadConsumptionsForUser(loggedInUser.getId(),currentYear);
+                        //finish(); // Close the activity after adding consumption
+                        Intent intent = new Intent(NewConsumptionActivity.this, ConsumptionListActivity.class);
+                        startActivity(intent);
                     } else {
                         // Failed insertion
                         Toast.makeText(NewConsumptionActivity.this, "Failed to add electricity consumption", Toast.LENGTH_SHORT).show();
@@ -84,7 +87,7 @@ public class NewConsumptionActivity extends AppCompatActivity {
 
     }
 
-    private void loadConsumptionsForUser(int userId, int selectedYear) {
+    private void loadConsumptionsForUser(long userId, int selectedYear) {
         Cursor cursor;
 
         if (selectedYear == 0) {

@@ -444,7 +444,7 @@ public class DBHelper extends SQLiteOpenHelper {
         db.close();
     }
     // Add this method to DBHelper class
-    public Cursor getElectricityConsumptionForMonth(int userId, int month, int year) {
+    public Cursor getElectricityConsumptionForMonth(long userId, int month, int year) {
         SQLiteDatabase db = this.getReadableDatabase();
 
         String[] columns = {
@@ -464,7 +464,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 null
         );
     }
-    public Cursor getWaterConsumptionForMonth(int userId, int month, int year) {
+    public Cursor getWaterConsumptionForMonth(long userId, int month, int year) {
         SQLiteDatabase db = this.getReadableDatabase();
 
         String[] columns = {

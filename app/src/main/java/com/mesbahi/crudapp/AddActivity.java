@@ -1,6 +1,7 @@
 package com.mesbahi.crudapp;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -70,7 +71,9 @@ public class AddActivity extends AppCompatActivity {
                         if (id != -1) {
                             // Successful insertion
                             Toast.makeText(AddActivity.this, "Water consumption added successfully", Toast.LENGTH_SHORT).show();
-                            finish(); // Close the activity after adding consumption
+                            //finish(); // Close the activity after adding consumption
+                            Intent intent = new Intent(AddActivity.this, WaterList.class);
+                            startActivity(intent);
                         } else {
                             // Failed insertion
                             Toast.makeText(AddActivity.this, "Failed to add water consumption", Toast.LENGTH_SHORT).show();
