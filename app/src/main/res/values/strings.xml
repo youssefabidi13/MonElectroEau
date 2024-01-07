@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CrudApp</string>
+    <string name="app_name">MonElectroEau</string>
     <string name="fab_content_description">Add Item</string>
     <string name="hint_select_month">Select Month</string>
     <string name="hint_year">Year</string>
